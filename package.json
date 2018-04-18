@@ -1,0 +1,28 @@
+{
+  "name": "movie-crud-backend-api",
+  "version": "1.0.0",
+  "description": "The API for the backend of the Movie CRUD, dealing with Creating, Reading, Updating, and Deleting movies.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chausicle/movie-crud-backend-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chausicle/movie-crud-backend-api/issues"
+  },
+  "homepage": "https://github.com/chausicle/movie-crud-backend-api#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "morgan": "^1.9.0",
+    "uuid": "^3.2.1"
+  }
+}
