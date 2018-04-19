@@ -18,11 +18,16 @@ const getMovieById = (id) => {
 };
 
 const updateMovie = (id, movie) => {
-
+  return knex("movies")
+    .where({ id })
+    .update(movie)
+    .returning("*");
 };
 
 const deleteMovie = (id) => {
-
+  return knex("movies")
+    .where({ id })
+    .del();
 };
 
 module.exports ={

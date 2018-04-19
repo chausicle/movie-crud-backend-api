@@ -24,8 +24,8 @@ const getMovieById = async (req, res, next) => {
   res.status(200).json(result);
 };
 
-const updateMovie = (req, res, next) => {
-  const result = model.updateMovie(req.params.id, req.body);
+const updateMovie = async (req, res, next) => {
+  const result = await model.updateMovie(req.params.id, req.body);
 
   if (result.errors)
     return next(sendErrors(result));
@@ -33,8 +33,11 @@ const updateMovie = (req, res, next) => {
   res.status(200).json(result);
 };
 
-const deleteMovie = (req, res, next) => {
-  const result = model.deleteMovie(req.params.id);
+const deleteMovie = async (req, res, next) => {
+  const result = await model.deleteMovie(req.params.id);
+
+  if (result.errors)
+    return next(sendErrors(result));
 
   res.status(204).json();
 };
