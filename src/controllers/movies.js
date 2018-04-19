@@ -1,27 +1,27 @@
 const model = require("../models/movies");
 
-const createMovie = (req, res, next) => {
-  const result = model.createMovie(req.body);
+const createMovie = async (req, res, next) => {
+  const result = await model.createMovie(req.body);
 
   if (result.errors)
     return next(sendErrors(result));
 
-  res.status(201).json({ result });
+  res.status(201).json(result);
 };
 
-const getAllMovies = (req, res, next) => {
-  const result = model.getAllMovies();
+const getAllMovies = async (req, res, next) => {
+  const result = await model.getAllMovies();
 
-  res.status(200).json({ result });
+  res.status(200).json(result);
 };
 
-const getMovieById = (req, res, next) => {
-  const result = model.getMovieById(req.params.id);
+const getMovieById = async (req, res, next) => {
+  const result = await model.getMovieById(req.params.id);
 
   if (result.errors)
     return next(sendErrors(result));
 
-  res.status(200).json({ result });
+  res.status(200).json(result);
 };
 
 const updateMovie = (req, res, next) => {
@@ -30,7 +30,7 @@ const updateMovie = (req, res, next) => {
   if (result.errors)
     return next(sendErrors(result));
 
-  res.status(200).json({ result });
+  res.status(200).json(result);
 };
 
 const deleteMovie = (req, res, next) => {
